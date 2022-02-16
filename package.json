@@ -18,5 +18,8 @@
   "homepage": "https://github.com/milad-kalhori/books-directory#readme",
   "dependencies": {
     "express": "^4.17.2"
+  },
+  "devDependencies": {
+    "mongoose": "^6.2.1"
   }
 }
