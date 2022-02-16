@@ -1,0 +1,22 @@
+{
+  "name": "books-directory",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://milad-kalhori@github.com/milad-kalhori/books-directory.git"
+  },
+  "author": "milad-kalhori",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/milad-kalhori/books-directory/issues"
+  },
+  "homepage": "https://github.com/milad-kalhori/books-directory#readme",
+  "dependencies": {
+    "express": "^4.17.2"
+  }
+}
