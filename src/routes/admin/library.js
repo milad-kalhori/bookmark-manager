@@ -2,14 +2,14 @@ const router = require('express').Router()
 const Services = require('../../services')
 
 router.route('/getAllBooks')
-    .post((req,res,next)=> {
+    .get((req,res,next)=> {
         Services.Admin.getAllBooks(req.body)
-            .then((category) => {
-                return SuccessHandler(res, 200, category)
-            })
-            .catch((err) => {
-                return ErrorHandler(err, req, res)
-            })
+          .then((result) => {
+              return console.log(result)
+          })
+          .catch((err) => {
+              return console.log(err)
+          })
   })
 
 

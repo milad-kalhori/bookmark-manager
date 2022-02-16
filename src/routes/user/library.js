@@ -2,13 +2,13 @@ const router = require('express').Router()
 const Services = require('../../services')
 
 router.route('/getAllBooks')
-    .post((req,res,next)=> {
+    .get((req,res,next)=> {
         Services.User.getAllBooks(req.user, req.body)
             .then((result) => {
-                return resolve(result)
+                return console.log(result)
             })
             .catch((err) => {
-                return reject(err)
+                return console.log(err)
             })
   })
 
