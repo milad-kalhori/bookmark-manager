@@ -1,23 +1,30 @@
 const mongoose = require('mongoose')
 
-const bookSchema = new mongoose.schema({
+// big S
+const bookSchema = new mongoose.Schema({
     title:{
-
+      type:String
     },
+
     year: {
-
+      type:Number
     },
+
     authet:{
+      type:String
     },
 
     price:{
-
+      type:Number
     },
     count : {
         type:Number
     },
     row: {
-
+      type:Number
+    },
+    culmn: {
+      type:Number
     },
     exist: {
         type:Boolean
@@ -30,6 +37,7 @@ const bookSchema = new mongoose.schema({
 })
 
 const Book = mongoose.model('Book',bookSchema)
+module.exports = Book
 
 /*
 name: {

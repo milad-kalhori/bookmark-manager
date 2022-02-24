@@ -12,8 +12,18 @@ router.route('/getAllBooks')
           })
   })
 
+router.route('/createBook')
+  .post((req,res,next)=> {
+      Services.Admin.createBook(req.body)
+      .then((result) => {
+          return console.log(result)
+      })
+      .catch((err) => {
+          return console.log(err)
+      })
+})
 
-  module.exports = router
+module.exports = router
 
 
 

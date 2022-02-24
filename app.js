@@ -1,11 +1,15 @@
 const express = require('express')
+const dotenv = require('dotenv')
 const mongoose = require('mongoose')
 
+dotenv.config( {path: './config/config.env'} )
 
 const app = express()
 
-const DB = process.env.DATABASE_LOCAL
+// body parser
+app.use(express.json());
 
+const DB = process.env.DATABASE_LOCAL
 mongoose
   .connect(DB, {
     useNewUrlParser: true,
