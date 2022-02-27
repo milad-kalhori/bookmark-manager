@@ -1,8 +1,9 @@
-const getAllBooks = ()=> {
-
-}
-
+const Find = require('./find')
+const Add = require('./add')
+const FindAndModify = require('./findAndModify')
 
 module.exports = {
-    getAllBooks,
+    Find,
+    Add,
+    FindAndModify,
 }
