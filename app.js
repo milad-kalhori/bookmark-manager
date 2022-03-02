@@ -1,6 +1,7 @@
 const express = require('express')
 const dotenv = require('dotenv')
-const mongoose = require('mongoose')
+
+const connectDB = require('./src/DB/drivers/mongoose')
 
 dotenv.config( {path: './config/config.env'} )
 
@@ -10,13 +11,7 @@ const app = express()
 app.use(express.json());
 
 const DB = process.env.DATABASE_LOCAL
-mongoose
-  .connect(DB, {
-    useNewUrlParser: true,
-    useUnifiedTopology: true,
-  })
-  .then(() => console.log("DB connection successful!"))
-
+connectDB(DB)
 
 const Port = process.env.Port || 5000
 const server = app.listen(Port , ()=> {
