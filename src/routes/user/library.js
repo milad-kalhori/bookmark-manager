@@ -2,9 +2,9 @@ const router = require('express').Router()
 const Seservices = require('../../services')
 
 
-router.route('/getAllBooks')
+router.route('/findAllBooks')
     .get((req,res,next)=>{
-        Seservices.User.getAllBooks()
+        Seservices.User.findAllBooks()
             then((result)=>{
                 console.log(result)
             }).catch((err)=>{

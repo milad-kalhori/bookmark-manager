@@ -1,9 +1,9 @@
 const router = require('express').Router()
 const Services = require('../../services')
 
-router.route('/getAllBooks')
+router.route('/findAllBooks')
     .get((req,res,next)=> {
-        Services.Admin.getAllBooks(req.body)
+        Services.Admin.findAllBooks(req.body)
           .then((result) => {
               return console.log(result)
           })
