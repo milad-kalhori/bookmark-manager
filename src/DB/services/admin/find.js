@@ -1,23 +1,30 @@
 const Book = require('../../models/book')
 
-const getAllBooks = ()=> {
+const findAllBooks = ()=> {
     return new Promise((resolve,reject) => {
-        // Book.Find({})
-        //     .then((fetchBooks)=>{
-        //         return resolve(fetchBooks)
-        //     }).catch((error)=>{
-        //         return reject(error)
-        //     })
-
-        Book.find({}, function(err, allBooks) {
-            return resolve(allBooks)
+        const condition = {}
+        _findAllBooks(condition, true)
+        .then((result)=>{
+            return resolve(result)
+        }).catch((err)=>{
+            return  reject(err)
         })
-})
+    })
 }
 
-
-// _editOne  findAll
+const _findAllBooks = (condition, multiple=false)=> {
+    return new Promise((resolve,reject) => {
+        let query
+        if (!multiple) query = Book.findOne(condition)
+        if (multiple) query = Book.find(condition)
+        query.exec((err, result) => {
+            if (err) return reject(err)
+            if (!result) return resolve(data)
+            if (result) return resolve(result)
+        })
+    })
+}
 
 module.exports = {
-    getAllBooks,
+    findAllBooks,
 }
