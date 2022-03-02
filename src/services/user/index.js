@@ -1,8 +1,8 @@
 const Databaseservices = require('../../DB/services')
 
-const getAllBooks = () => {
+const findAllBooks = () => {
     return new Promise((resolve,reject)=>{
-        Databaseservices.User.Find.getAlllBooks()
+        Databaseservices.User.Find.findAllBooks()
             .then((result)=>{
                 return resolve(result)
             }).catch((err)=>{
@@ -12,5 +12,5 @@ const getAllBooks = () => {
 }
 
 module.exports = {
-    getAllBooks,
+    findAllBooks,
 }

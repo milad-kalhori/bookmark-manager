@@ -1,9 +1,9 @@
 const Databaseservices = require('../../DB/services')
 // bluebird
 
-const getAllBooks = (body)=> {
+const findAllBooks = (body)=> {
     return new Promise((resolve,reject) => {
-       Databaseservices.Admin.Find.getAllBooks()
+       Databaseservices.Admin.Find.findAllBooks()
         .then((result) => {
             return resolve(result)
         })
@@ -25,6 +25,6 @@ const createBook = (body) => {
 }
 
 module.exports = {
-    getAllBooks,
+    findAllBooks,
     createBook,
 }
