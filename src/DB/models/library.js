@@ -12,7 +12,7 @@ const librarySchema = new mongoose.Schema({
     },
     createdAt: {
         type: Date,
-        default: Date.now
+       // default: Date.now
       },
     bokks: [
         {
@@ -20,7 +20,7 @@ const librarySchema = new mongoose.Schema({
           ref: 'Book'
         }
     ],
-})
+}, {timestamps: true})
 
 const Library = mongoose.model('Library', librarySchema)
 module.exports = Library

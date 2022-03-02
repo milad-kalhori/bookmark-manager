@@ -31,13 +31,13 @@ const bookSchema = new mongoose.Schema({
   },
   createdAt: {
     type: Date,
-    default: Date.now
+    //default: Date.now
   },
   lendingToUser: {
     type: mongoose.Schema.ObjectId,
     ref: 'User'
   }
-})
+}, {timestamps: true})
 
 const Book = mongoose.model('Book', bookSchema)
 module.exports = Book

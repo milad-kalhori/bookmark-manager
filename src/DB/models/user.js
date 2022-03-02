@@ -17,13 +17,13 @@ const userSchema = new mongoose.Schema({
     // createdAt
     createdAt: {
         type: Date,
-        default: Date.now
+       // default: Date.now
       },
     lendingOfbooks :{
         type: mongoose.Schema.ObjectId,
         ref: 'Book'
     },
-})
+}, {timestamps: true})
 
 const User = mongoose.model('User', userSchema)
 module.exports = User
