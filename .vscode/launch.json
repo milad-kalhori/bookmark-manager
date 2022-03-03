@@ -11,7 +11,12 @@
             "skipFiles": [
                 "<node_internals>/**"
             ],
-            "program": "${workspaceFolder}\\app.js"
+            "program": "${workspaceFolder}\\app.js",
+            "env": {
+                "NODE_ENV": "development",
+                "PORT": "5000",
+                "DATABASE_LOCAL": "mongodb://localhost:27017/books-directory"
+            }
         }
     ]
 }
