@@ -10,8 +10,7 @@ const app = express()
 // body parser
 app.use(express.json());
 
-const DB = process.env.DATABASE_LOCAL
-connectDB(DB)
+connectDB()
 
 const Port = process.env.Port || 5000
 const server = app.listen(Port , ()=> {
