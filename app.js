@@ -3,6 +3,7 @@ const dotenv = require('dotenv')
 
 const connectDB = require('./src/DB/drivers/mongoose')
 
+// one place for every place
 dotenv.config( {path: './config/config.env'} )
 
 const app = express()
