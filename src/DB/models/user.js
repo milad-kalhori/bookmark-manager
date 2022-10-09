@@ -1,29 +1,24 @@
 const mongoose = require('mongoose')
 
 const userSchema = new mongoose.Schema({
-  name :{
+  name: {
     type: String
   },
-  family :{
+  family: {
     type: String
   },
-  phone :{
+  phone: {
     type: String
   },
-  //privilege
-  role :{
+  role: {
     type: String
   },
-  // createdAt
-  createdAt: {
-    type: Date,
-    // default: Date.now
-  },
-  lendingOfbooks :{
-    type: mongoose.Schema.ObjectId,
-    ref: 'Book'
-  },
+  lendingOfbooks: [
+    {
+      type: mongoose.Schema.ObjectId,
+      ref: 'Book'
+    }
+  ]
 }, {timestamps: true})
 
-const User = mongoose.model('User', userSchema)
-module.exports = User
+module.exports = mongoose.model('User', userSchema)

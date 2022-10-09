@@ -1,10 +1,6 @@
 const mongoose = require('mongoose')
 
-// big S
 const bookSchema = new mongoose.Schema({
-  bookId: {
-    type: String
-  },
   title: {
     type: String
   },
@@ -26,12 +22,8 @@ const bookSchema = new mongoose.Schema({
   lending: {
     type: Boolean
   },
-  exist :{
+  exist:{
     type: Boolean
-  },
-  createdAt: {
-    type: Date,
-    //default: Date.now
   },
   lendingToUser: {
     type: mongoose.Schema.ObjectId,
@@ -39,6 +31,4 @@ const bookSchema = new mongoose.Schema({
   }
 }, {timestamps: true})
 
-const Book = mongoose.model('Book', bookSchema)
-module.exports = Book
-
+module.exports = mongoose.model('Book', bookSchema)

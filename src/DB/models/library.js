@@ -4,16 +4,18 @@ const librarySchema = new mongoose.Schema({
   count :{
     type:Number
   },
+  row: [
+    {type: Number}
+  ],
+  culmn: [
+    {type: Number}
+  ],
   numberOfExist :{
     type: Number
   },
   numberOfLending :{
     type: Number
   },
-  createdAt: {
-    type: Date,
-    // default: Date.now
-    },
   bokks: [
     {
       type: mongoose.Schema.ObjectId,
@@ -22,5 +24,4 @@ const librarySchema = new mongoose.Schema({
   ],
 }, {timestamps: true})
 
-const Library = mongoose.model('Library', librarySchema)
-module.exports = Library
+module.exports = mongoose.model('Library', librarySchema)
