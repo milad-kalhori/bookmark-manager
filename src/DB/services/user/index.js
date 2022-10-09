@@ -3,7 +3,7 @@ const Add = require('./add')
 const FindAndModify = require('./findAndModify')
 
 module.exports = {
-    Find,
-    Add,
-    FindAndModify,
+  Find,
+  Add,
+  FindAndModify,
 }

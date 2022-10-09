@@ -2,26 +2,26 @@ const router = require('express').Router()
 const Services = require('../../services')
 
 router.route('/findAllBooks')
-    .get((req,res,next)=> {
-        Services.Admin.findAllBooks(req.body)
-          .then((result) => {
-              return console.log(result)
-          })
-          .catch((err) => {
-              return console.log(err)
-          })
+  .get((req,res,next)=> {
+    Services.Admin.findAllBooks(req.body)
+      .then((result) => {
+        return console.log(result)
+      })
+      .catch((err) => {
+        return console.log(err)
+      })
   })
 
 router.route('/createBook')
   .post((req,res,next)=> {
-      Services.Admin.createBook(req.body)
+    Services.Admin.createBook(req.body)
       .then((result) => {
-          return console.log(result)
+        return console.log(result)
       })
       .catch((err) => {
-          return console.log(err)
+        return console.log(err)
       })
-})
+  })
 
 module.exports = router
 
