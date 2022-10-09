@@ -3,27 +3,23 @@ const dotenv = require('dotenv')
 
 const connectDB = require('./src/DB/drivers/mongoose')
 
-// one place for every place
-dotenv.config( {path: './config/config.env'} )
+dotenv.config({path: './src/config/config.env'})
 
 const app = express()
 
-// body parser
-app.use(express.json());
-
 connectDB()
 
-const Port = process.env.Port || 5000
-const server = app.listen(Port , ()=> {
-  console.log(`server run on port ${Port}`)
-})
-
-// http://localhost:5000
 app.use('/api/v2/admin/library', require('./src/routes/admin/library'))
 app.use('/api/v2/user',require('./src/routes/user/library'))
 
+const PORT = process.env.PORT || 8000
+const server = app.listen(PORT , (err, result)=> {
+  if (err) console.log(err)
+  else console.log(`server run on port ${PORT}`)
+})
 
 process.on('unhandledRejection',(reason,reject)=> {
   let promiseCauseProblem = reason.stack.split('\n ')
   console.log(`unhandledRejection --> ${reason}, ${promiseCauseProblem[1]}`)
 })
+

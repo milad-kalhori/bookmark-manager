@@ -1,7 +1,6 @@
 const router = require('express').Router()
 const Seservices = require('../../services')
 
-
 router.route('/findAllBooks')
   .get((req,res,next)=>{
     Seservices.User.findAllBooks()
