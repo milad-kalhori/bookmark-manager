@@ -1,9 +1,6 @@
-const Find = require('./find')
-const Add = require('./add')
-const FindAndModify = require('./findAndModify')
+const Book = require('./book')
+
 
 module.exports = {
-  Find,
-  Add,
-  FindAndModify,
+  Book
 }

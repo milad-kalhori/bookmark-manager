@@ -1,9 +1,10 @@
+const Promise = require('bluebird')
 const Databaseservices = require('../../DB/services')
-// bluebird
+
 
 const findAllBooks = (body)=> {
   return new Promise((resolve,reject) => {
-    Databaseservices.Admin.Find.findAllBooks()
+    Databaseservices.Admin.Book.Find.findAllBooks()
       .then((result) => {
         return resolve(result)
       })
@@ -12,9 +13,9 @@ const findAllBooks = (body)=> {
       })
   })
 }
-const createBook = (body) => {
+const addNewBook = (body) => {
   return new Promise((resolve,reject) => {
-    Databaseservices.Admin.Add.createBook(body)
+    Databaseservices.Admin.Book.Add.addNewBook(body)
       .then((result) => {
         return resolve(result)
       })
@@ -26,5 +27,5 @@ const createBook = (body) => {
 
 module.exports = {
   findAllBooks,
-  createBook,
+  addNewBook,
 }
