@@ -1,5 +1,5 @@
 const Promise = require('bluebird')
-const Book = require('../../models/book')
+const Book = require('../../../models/book')
 
 const findAll = ()=>{
 	return new Promise((resolve,reject)=>{
