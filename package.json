@@ -18,6 +18,7 @@
   },
   "homepage": "https://github.com/milad-kalhori/books-directory#readme",
   "dependencies": {
+    "bluebird": "^3.7.2",
     "dotenv": "^16.0.0",
     "express": "^4.17.2"
   },
