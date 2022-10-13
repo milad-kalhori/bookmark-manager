@@ -1,7 +1,8 @@
 const Promise = require('bluebird')
 const Book = require('../../../models/book')
 
-const findAll = ()=> {
+
+const findAllBooks = (data)=> {
   return new Promise((resolve,reject) => {
     const condition = {}
     _findBasedOnCondition(condition, true)
@@ -13,10 +14,22 @@ const findAll = ()=> {
   })
 }
 
+const findBook = (data)=> {
+  return new Promise((resolve,reject) => {
+    const condition = {title: data.title}
+    _findBasedOnCondition(condition, false)
+      .then((result)=>{
+        return resolve(result)
+      }).catch((err)=>{
+        return  reject(err)
+      })
+  })
+}
+
 const _findBasedOnCondition = (condition, multiple=false)=> {
   return new Promise((resolve,reject) => {
     let query
-    if (multiple) query = Book.find(condition)
+    if (multiple) query = Book.find()
     else query = Book.findOne(condition)
     query.exec((err, result) => {
       if (err) return reject(err)
@@ -26,5 +39,6 @@ const _findBasedOnCondition = (condition, multiple=false)=> {
 }
 
 module.exports = {
-  findAllBooks: findAll,
+  findAllBooks,
+  findBook,
 }

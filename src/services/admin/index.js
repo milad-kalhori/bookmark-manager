@@ -13,6 +13,20 @@ const findAllBooks = (body)=> {
       })
   })
 }
+
+
+const findBook = (body)=> {
+  return new Promise((resolve,reject) => {
+    Databaseservices.Admin.Book.Find.findBook(body)
+      .then((result) => {
+        return resolve(result)
+      })
+      .catch((error) => {
+        return reject(error)
+      })
+  })
+}
+
 const addNewBook = (body) => {
   return new Promise((resolve,reject) => {
     Databaseservices.Admin.Book.Add.addNewBook(body)
@@ -27,5 +41,6 @@ const addNewBook = (body) => {
 
 module.exports = {
   findAllBooks,
+  findBook,
   addNewBook,
 }
