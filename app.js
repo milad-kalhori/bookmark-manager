@@ -7,7 +7,7 @@ dotenv.config({path: './src/config/config.env'})
 
 const app = express()
 
-//app.use(express.json())
+app.use(express.json())
 
 connectDB()
 
