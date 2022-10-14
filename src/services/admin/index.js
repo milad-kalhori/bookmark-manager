@@ -64,10 +64,23 @@ const updateAllBook = (query, body) => {
   })
 }
 
+const removeBook = (id) => {
+  return new Promise((resolve, reject)=> {
+    Databaseservices.Admin.Book.Remove.removeBook(id)
+    .then((result) => {
+      return resolve(result)
+    })
+    .catch((error) => {
+      return reject(error)
+    })
+  })
+}
+
 module.exports = {
   findAllBooks,
   findBook,
   addNewBook,
   updateBook,
   updateAllBook,
+  removeBook,
 }
