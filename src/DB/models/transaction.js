@@ -1,10 +1,18 @@
 const mongoose = require('mongoose')
 
 const transactionSchema = mongoose.Schema({
-  state: String,
-  level: String,
-  internalTrackingNumber: Number,
-  identifire: String,
+  state: {
+    type: String
+  },
+  level: {
+    type: String
+  },
+  internalTrackingNumber: {
+    type: Number
+  },
+  identifire:{
+    type: String
+  },
   user: [
     {
       type: mongoose.Schema.ObjectId,
