@@ -1,7 +1,8 @@
 const mongoose = require('mongoose')
 
 const transactionSchema = mongoose.Schema({
-
+  state: String,
+  level: String,
 }, {timestamps: true})
 
 
