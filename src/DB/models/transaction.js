@@ -4,6 +4,7 @@ const transactionSchema = mongoose.Schema({
   state: String,
   level: String,
   internalTrackingNumber: Number,
+  identifire: String,
   user: [
     {
       type: mongoose.Schema.ObjectId,
