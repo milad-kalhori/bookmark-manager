@@ -1,14 +1,20 @@
 import { Injectable } from '@nestjs/common';
+import { threadId } from 'worker_threads';
 
 @Injectable()
 export class BookmarksService {
-  private bokkMarks = [{
+  private bookkMarks = [{
     id : 7,
     name: "milad",
-    age: 22
+    age: 24
   }]
 
   findAll(){
-    return this.bokkMarks
+    return this.bookkMarks
   }
+
+  findOneById(id){
+    return this.bookkMarks.find((item)=> item.id === id )
+  }
+
 }
