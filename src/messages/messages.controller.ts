@@ -16,4 +16,7 @@ export class MessagesController {
 
   @Patch('/:id')
   updateMessage(@Param('id')id: string) {}
+
+  @Delete('/:id')
+  deleteMessage(@Param('id')id: string) {}
 }
