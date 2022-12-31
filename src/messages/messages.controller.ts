@@ -13,4 +13,7 @@ export class MessagesController {
 
   @Get('/:id')
   getMessage(@Param('id')id: string) {}
+
+  @Patch('/:id')
+  updateMessage(@Param('id')id: string) {}
 }
