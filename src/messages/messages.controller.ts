@@ -1,4 +1,4 @@
-import { Controller, Get, Post, Body, Param, NotFoundExeption } from '@nestjs/common';
+import { Controller, Get, Post, Put, Patch, Delete, Body, Param, NotFoundExeption } from '@nestjs/common';
 import { CreateMessageDto } from './dtos/create-message.dto'
 import { MessagesService } from './messages.service'
 
@@ -21,6 +21,16 @@ export class MessagesController {
     if (!message) {
       throw new Error(NotFoundExeption)
     }
+  }
+
+  @Patch()
+  update() {
+    return 'hello world!'
+  }
+
+  @Delete()
+  delete() {
+    return 'hello world!'
   }
 }
 
