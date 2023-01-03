@@ -1,4 +1,14 @@
 import { Injectable } from '@nestjs/common';
 
 @Injectable()
-export class MessagesService {}
+export class MessagesService {
+  findAll(){
+
+  }
+  findOne(){
+    return true
+  }
+  create(){
+
+  }
+}
