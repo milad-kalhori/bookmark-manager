@@ -9,15 +9,17 @@ export class MessagesController {
 
   @Get()
   listMessages() {
-    return 'hello world!'
+    return this.messageService.findAll()
   }
 
   @Post()
-  createMessage(@Body() body: CreateMessageDto) {}
+  createMessage(@Body() body: CreateMessageDto) {
+    return this.messageService.create(body.content)
+  }
 
   @Get('/:id')
   async getMessage(@Param('id')id: string) {
-    const message = await this.messageService.findOne()
+    const message = await this.messageService.findOne(id)
     if (!message) {
       throw new Error(NotFoundExeption)
     }
