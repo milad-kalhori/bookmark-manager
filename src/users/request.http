@@ -7,4 +7,3 @@ content-type: application/json
   "password": "aaaaaaaa"
 }
 
-POST http://localhost:3000/auth/login
